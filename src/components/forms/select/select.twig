@@ -1,0 +1,21 @@
+{% set class = class | default('form-select') %}
+{% set modify = ' '~modify | default('') %}
+
+{% if not id %}
+    <h2 class="development-warning">Укажите ID для Select</h2>
+{% endif %}
+{% if not name %}
+    <h2 class="development-warning">Укажите NAME для Select</h2>
+{% endif %}
+<select
+        id="{{ id }}"
+        class="{{ class }}{{ modify }}"
+        name="{{ name | default('') }}"
+        {% if placeholder %} placeholder="{{ placeholder }}"{% endif %}
+        {% if required %} required{% endif %}
+        {{ dataAttr }}
+>
+    {% for option in options %}
+        <option value="{{ option.value }}"{% if option.selected %} selected{% endif %}>{{ option.name }}</option>
+    {% endfor %}
+</select>

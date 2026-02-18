@@ -1,0 +1,86 @@
+.tabprice {
+  @include container();
+  @include padding-vertical-30();
+
+  .tabs__content {
+    display: none; /* по умолчанию прячем все блоки */
+  }
+
+  .tabs__content.active {
+    display: block; /* по умолчанию показываем нужный блок */
+    //background-color: #0f7c82;
+  }
+
+  .tabs__caption li.active {
+    background-color: #0f7c82;
+    color: white;
+  }
+
+  .tabs__caption {
+    display: flex;
+    padding-left: 0;
+
+    li:hover {
+      background-color: #0f7c82;
+      color: white;
+    }
+
+    li {
+      cursor: pointer;
+      padding: 12px 20px;
+      border: 1px solid black;
+      list-style-type: none;
+    }
+
+    li:first-child {
+      border-radius: 25px 0 0 25px;
+    }
+
+    li:last-child {
+      border-radius: 0 25px 25px 0;
+    }
+  }
+
+  .tabs__content {
+    .middle__button {
+      width: 147px;
+    }
+
+    table {
+      padding: 20px 0;
+      width: 100%;
+
+      tr:first-child {
+        td {
+          font-weight: 700;
+        }
+      }
+
+      tr {
+        td {
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+@media #{$mobile-only-two} {
+  .tabprice {
+
+    .tabs__caption {
+      flex-wrap: wrap;
+      li{
+        flex: 1 1 50%;
+        max-width: 50%;
+      }
+
+      li:first-child {
+        border-radius: 0 0 0 0;
+      }
+
+      li:last-child {
+        border-radius: 0 0 0 0;
+      }
+    }
+  }
+}

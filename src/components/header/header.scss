@@ -1,0 +1,85 @@
+.header{
+  @include container();
+
+}
+//отступы для карты
+.wr{
+  @include container();
+}
+
+.header-top{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+height: 50px;
+  border-bottom: 1px solid #eee;
+  .middle__button{
+    display: none;
+  }
+}
+
+
+
+.header-middle{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  .header-middle__logo{
+    width: 229px;
+    img{
+      width: 100%;
+    }
+  }
+  .header-middle__cont{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    .header-middle__table{
+      text-align: right;
+    }
+  }
+
+
+}
+@media #{$tablet-all-only} {
+
+  .header-middle__table{
+    display:none;
+  }
+}
+@media #{$mobile-only-two} {
+  .header-top {
+    .header-top__name{
+      display: none;
+    }
+    .header-top__numbers{
+      span{
+        font-size: 14px;
+      }
+      display: flex;
+      flex-direction: column;
+    }
+    .middle__button{
+      display: block;
+      padding: 5px;
+    }
+  }
+  .header-middle {
+    .header-middle__table {
+      display: none;
+    }
+
+    .header-top__name {
+      display: none;
+    }
+
+    .middle__button {
+      display: none;
+    }
+  }
+
+}
+
+@import './menu';

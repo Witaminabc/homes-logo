@@ -1,0 +1,48 @@
+{#
+    {%  include 'checkbox.twig' with {
+        id: 1,
+        modify: "",
+        modifyInput: "",
+        classField: "",
+        classInput: "",
+        classLabel: "",
+        value: "",
+        name: "",
+        error: "",
+        checked: true,
+        disabled: false,
+        required: true,
+        text: "",
+        title: "",
+        addCounter: ""
+    } %}
+#}
+
+{% if id %}
+    <div class="{{  classField|default('checkbox') }}{% if modify %} {{ modify }}{% endif %}">
+        <input
+            id="{{ id }}"
+            class="{{ classInput|default('checkbox__input') }} {{ modifyInput|default('') }}"
+            type="checkbox"
+            value="{{ value|default(1) }}"
+            name="{{ name }}"
+            {% if error %} data-error="{{ error }}"{% endif %}
+            {% if checked %} checked {% endif %}
+            {% if disabled %} disabled {% endif %}
+            {% if required %} required {% endif %}
+        >
+        <label for="{{ id }}" class="{{ classLabel|default('checkbox__label') }}" title="{{ title }}">
+            <span class="{{ classField|default('checkbox') }}__square"></span>
+            {% if text %}
+                <span class="{{ classField|default('checkbox') }}__text">
+                    {{ text }}
+                    {% if addCounter %}
+                        <span class="checkbox__text-counter">({{ addCounter }})</span>
+                    {% endif %}
+                </span>
+            {% endif %}
+        </label>
+    </div>
+{% else %}
+    <div class="development-error">Пожалуйста, укажи уникальный <b>id</b> для чекбокса</div>
+{% endif %}

@@ -1,0 +1,54 @@
+.portfolio{
+  @include container();
+  @include padding-vertical-30();
+  .tabs__caption{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+    li:hover{
+      cursor: pointer;
+    }
+    li{
+      list-style-type: none;
+    }
+  }
+  .tabs__content {
+    display: none; /* по умолчанию прячем все блоки */
+  }
+
+  .tabs__content.active {
+    display: block; /* по умолчанию показываем нужный блок */
+    //background-color: #0f7c82;
+  }
+
+  .tabs__caption li.active {
+    //background-color: #0f7c82;
+    color:#0f7c82 ;
+  }
+  .portfolio-galery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    .portfolio-galery__img{
+      flex: 1 1 calc((100% / 3) - 2rem);
+      max-width: calc((100% / 3) - 2rem);
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media #{$mobile-only-two} {
+  .portfolio {
+    .portfolio-galery {
+      gap: 1rem;
+
+      .portfolio-galery__img {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}

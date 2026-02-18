@@ -1,0 +1,37 @@
+.masters{
+  @include container();
+
+}
+.masters-wrap{
+  display: flex;
+  .masters__elem{
+    //flex: 1 1 calc(100% / 3);
+    width: calc(100% / 3);
+    img{
+      width: 100%;
+    }
+  }
+}
+.masters {
+
+  @media #{$tablet-all-only} {
+
+    .masters-wrap {
+      gap: 3rem;
+    }
+  }
+  @media #{$mobile-only-two} {
+    .masters-wrap {
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .masters__elem {
+        width: 100%;
+
+        //flex: 1 1 100%!important;
+      }
+    }
+  }
+
+}
+

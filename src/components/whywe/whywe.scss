@@ -1,0 +1,52 @@
+.whywe {
+  @include container();
+  h2{
+    text-align: center;
+  }
+  .whywe-wrap {
+    display: flex;
+    gap: 2rem;
+
+    .whywe__elem {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+
+      .whywe__text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      text-align: center;
+
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+}
+@media #{$tablet-all-only} {
+
+  .whywe-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    .whywe__elem {
+      width: calc(50% - 1rem);
+    }
+  }
+}
+@media #{$mobile-only-two} {
+  .whywe-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .whywe__elem {
+      width: 100%;
+    }
+    }
+}

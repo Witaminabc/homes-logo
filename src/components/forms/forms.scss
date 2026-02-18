@@ -1,0 +1,116 @@
+$border-radius: 0;
+
+label {
+  margin: 0;
+}
+
+.form__title {
+  margin-bottom: rhythm(2);
+  font-size: 2rem;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+
+.form-group {
+  flex-grow: 1;
+  margin-bottom: rhythm(2);
+}
+
+.form-group__title {
+  margin-bottom: rhythm(1);
+  font-size: 1.8rem;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+
+.form-group_horisontal {
+  display: flex;
+  align-items: center;
+
+  .form-field {
+    margin-bottom: 0;
+  }
+
+  label {
+    margin-right: rhythm(2);
+  }
+
+  .form-field {
+    margin-right: column(1);
+  }
+}
+
+.form-field {
+  margin-bottom: rhythm(3);
+  flex-grow: 1;
+}
+
+.form-group_vertical {
+  display: flex;
+  flex-direction: column;
+
+  .form-field {
+    margin-bottom: rhythm(3);
+  }
+
+  label {
+    margin-bottom: rhythm(2);
+  }
+}
+
+.form-field_horisontal {
+  display: flex;
+  align-items: center;
+
+  label {
+    margin-right: rhythm(2);
+  }
+}
+
+.form-field_vertical {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: rhythm(2);
+  }
+}
+
+.form__select {
+  height: 36px;
+  padding: rhythm(1) rhythm(4);
+  border: none;
+  border-radius: $border-radius;
+  text-align: left;
+  color: $color-gray-light;
+  background-color: $color-gray-lighten;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.form-fast-edit {
+  display: flex;
+  margin-top: rhythm(1);
+}
+
+.form-fast-edit__field {
+  font-size: 1.2rem;
+  width: calc(30ch + 8px);
+  margin-right: rhythm(2);
+
+  & > input {
+    font-size: 1.2rem;
+    height: 36px;
+  }
+
+}
+
+.form-fast-edit__button {
+
+}
+
+@import './email/email';
+@import './phone/phone';
+@import './text/text';
+@import './select/select';
+@import './checkbox/checkbox';

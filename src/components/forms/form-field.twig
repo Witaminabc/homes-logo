@@ -1,0 +1,15 @@
+{% set fieldComponent = fieldComponent | default('text') %}
+{% set classField = classField | default('form-field') %}
+{% if modify %}
+    {% set modify = ' '~modify %}
+{% endif %}
+
+{% set fieldParam = fieldParam | default('') %}
+
+<div class="{{ classField }}{{ modify }}">
+    {% if label %}
+        <label for="{{ id }}">{{ label }}</label>
+    {% endif %}
+
+    {% include fieldComponent~'/' ~ fieldComponent ~ '.twig' with fieldParam %}
+</div>

@@ -1,0 +1,17 @@
+$form-select-border-radius: 0;
+
+.form-select {
+  width: 100%;
+  border-radius: $form-select-border-radius;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: rhythm(1) rhythm(1);
+  text-align: left;
+
+  @media #{$tablet} {
+    font-size: 1.4rem;
+    border: 1px solid $color-gray;
+    padding: rhythm(2) rhythm(2);
+  }
+}

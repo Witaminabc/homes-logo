@@ -1,0 +1,74 @@
+<ul class="component-buttons__list">
+    <li>
+        {% include 'checkbox.twig' with {
+            id: 'onlyCheckbox',
+            name: 'onlyCheckbox',
+            checked: true
+        }
+        %}
+    </li>
+    <li>
+        {% include 'checkbox.twig' with {
+            id: 'onlyCheckboxUnchecked',
+            name: 'onlyCheckboxUnchecked',
+            text: 'unchecked',
+        }
+        %}
+    </li>
+    <li>
+        {% include 'checkbox.twig' with {
+            id: 'Checkboxdisabled',
+            name: 'Checkboxdisabled',
+            text: 'disabled',
+            checked: true,
+            disabled: true
+        }
+        %}
+    </li>
+    <li>
+        {% include 'checkbox.twig' with {
+            id: 'all',
+            name: 'user[all]',
+            text: 'Все пользователи',
+            checked: true,
+            modify: 'checkbox_bold-label',
+            addCounter: 120
+        }
+        %}
+    </li>
+    <li>
+        {% include 'checkbox.twig' with {
+                id: 'checkboxWithBorder',
+                modify: 'user-type-filter__checkbox_new',
+                name: 'user[user_id]',
+                text: 'Новые пользователи',
+                checked: true,
+                addCounter: '20'
+            }
+        %}
+    </li>
+    <li style="width:100px;">
+        {% include 'checkbox.twig' with {
+                id: 'checkboxTable',
+                modify: 'checkbox_table',
+                name: 'user[user_id]',
+                text: 'только 20%&nbsp;НДС',
+                checked: true
+            }
+        %}
+    </li>
+</ul>
+<pre>
+    {% verbatim %}
+        {% include 'checkbox.twig' with {
+                id: 'UNIQ_ID',
+                name: 'formName',
+                text: 'Label',
+                checked: true / false,
+                modify: 'checkbox_bold-label / user-type-filter__checkbox_new / ...',
+                addCounter: 120,
+                disabled: true / false
+            }
+        %}
+    {% endverbatim %}
+</pre>

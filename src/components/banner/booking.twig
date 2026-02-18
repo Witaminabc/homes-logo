@@ -1,0 +1,112 @@
+<div class="booking-container-wrap">
+    <div class="booking-title">
+        Забронировать дом
+    </div>
+
+    <div class="booking-container">
+
+
+        <!-- Выпадающий список домов (из предыдущего макета) -->
+        <div class="dropdown">
+            <button class="dropdown-toggle" id="houseDropdown">
+                <div class="dropdown-toggle-wrap">
+                    <span class="dropdown-toggle-name">Выберите дом</span>
+                    <span>Название дома</span>
+                </div>
+                <svg class="dropdown-arrow" class="icon" width="24" height="24">
+                    <use href="../img/icons.svg#plusznak"></use>
+                </svg>
+            </button>
+            <div class="dropdown-menu" id="houseMenu">
+                <div class="dropdown-item selected" data-value="house1">Название дома, 4 местный</div>
+                <div class="dropdown-item" data-value="house2">Название дома, 6 местный</div>
+                <div class="dropdown-item" data-value="house3">Название дома, 2 местный</div>
+                <div class="dropdown-item" data-value="house4">Название дома, 2 местный</div>
+                <div class="dropdown-item" data-value="house5">Название дома, 1 местный</div>
+                <div class="dropdown-item" data-value="house6">Название дома, 1 местный</div>
+            </div>
+        </div>
+
+        <!-- Даты заезда/отъезда (из нового макета) -->
+        <div class="dates-section">
+            <div class="date-input-group">
+                <div class="date-input-wrapper">
+                    <label class="date-label">Заезд</label>
+                    <input type="text" class="date-input" id="checkin" placeholder="Когда" readonly>
+                </div>
+            </div>
+            <div class="date-input-group">
+                <div class="date-input-wrapper">
+                    <label class="date-label">Отъезд</label>
+                    <input type="text" class="date-input" id="checkout" placeholder="Когда" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок с гостями (интегрированный) -->
+        <div class="guests-section">
+            <!-- Гости (краткая сводка как в новом макете) -->
+            <div class="guest-summary-block" id="guestSummaryToggle">
+                <div class="guest-summary-block-wrap">
+                    <span class="guest-summary-label">Гости</span><br>
+                    <span class="guest-summary-value" id="guestSummary">1 взрослый, без детей</span>
+                </div>
+
+
+                <svg class="dropdown-arrow" class="icon" width="24" height="24">
+                    <use href="../img/icons.svg#plusznak"></use>
+                </svg>
+            </div>
+
+            <!-- Детальный блок выбора гостей (скрыт по умолчанию) -->
+            <div class="guest-detail-panel" id="guestDetailPanel">
+                <div class="guest-block">
+                    <div class="guest-category">
+                        <div class="category-info">
+                            <span class="category-title">Взрослые</span>
+                            <span class="category-age">от 18 лет</span>
+                        </div>
+                        <div class="counter">
+                            <button class="counter-btn minus" disabled>-</button>
+                            <span class="counter-value" id="adultCount">1</span>
+                            <button class="counter-btn plus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="guest-category">
+                        <div class="category-info">
+                            <span class="category-title">Дети</span>
+                            <span class="category-age">от 0 до 17 лет</span>
+                        </div>
+                        <div class="counter">
+                            <button class="counter-btn minus" disabled>-</button>
+                            <span class="counter-value" id="childrenCount">0</span>
+                            <button class="counter-btn plus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="pets-option">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox" id="petsCheckbox">
+                            <span>С питомцами</span>
+                        </label>
+                    </div>
+
+                    <button class="apply-guests-btn" id="applyGuests">Применить</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Согласие на обработку данных -->
+        <div class="consent-section">
+
+            <button class="house-crystal-orange-btn" id="bookingSubmit">Найти номер</button>
+        </div>
+
+        <!-- Кнопка бронирования -->
+
+
+        <!-- Уведомление об отправке -->
+        <div class="notification" id="notification"></div>
+    </div>
+</div>

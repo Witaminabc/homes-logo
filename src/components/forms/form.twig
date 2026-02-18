@@ -1,0 +1,24 @@
+{% set class = class | default('form') %}
+{% set modify = ' '~modify | default('') %}
+
+<form class="{{ class }}{{ modify }}" action="#">
+    {% if header %}
+        <div class="{{ class }}__title">{{ header }}</div>
+    {% endif %}
+    {% for formGroup in formGroups %}
+        {% include './form-group.twig' with formGroup %}
+    {% endfor %}
+    {% if buttons %}
+        <div class="form__buttons">
+            {% for button in buttons %}
+                {% include '../buttons/button.twig' with {
+                    tag: button.tag,
+                    title: button.title,
+                    href: button.href,
+                    name: button.name,
+                    icon: button.icon,
+                }%}
+            {% endfor %}
+        </div>
+    {% endif %}
+</form>

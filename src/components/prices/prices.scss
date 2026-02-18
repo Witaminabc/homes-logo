@@ -1,0 +1,57 @@
+.prices {
+  @include container();
+  @include padding-vertical-30();
+
+}
+
+.prices-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  .prices__elem {
+    position: relative;
+    flex: 1 1 calc((100% / 2) - 1rem);
+    max-width: calc((100% / 2) - 1rem);
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      //z-index: 199;
+    }
+
+    .prices__elem-img {
+      //position: static;
+      z-index: 200;
+      opacity:1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      h4{
+        z-index: 200;
+        border-bottom: 1px solid black;
+      }
+      .prices__serv {
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .prices__buttons {
+        z-index: 200;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+@media #{$mobile-only-two} {
+  .prices-wrap {
+    .prices__elem {
+      flex:1 1 100%;
+      max-width: calc((100% ));
+    }
+  }
+}

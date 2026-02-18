@@ -1,0 +1,42 @@
+.aboutour{
+  @include container();
+  .aboutour-wrap{
+    .aboutour__text{
+      background-color: #f6f6f6;
+      padding: 10px 30px;
+    }
+    display: flex;
+    gap: 1rem;
+  }
+}
+@media #{$tablet-all-only} {
+  .aboutour-wrap{
+    flex-wrap: wrap;
+    .aboutour__text {
+      width: 100%;
+      order: 1;
+    }
+    .aboutour__img {
+      order: 0;
+      text-align: center;
+      width: 100%;
+    }
+    }
+}
+@media #{$mobile-only-two} {
+  .aboutour-wrap{
+    flex-wrap: wrap;
+    .aboutour__text {
+      width: 100%;
+      order: 1;
+    }
+    .aboutour__img {
+      text-align: center;
+      order: 0;
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

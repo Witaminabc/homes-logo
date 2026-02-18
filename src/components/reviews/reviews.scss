@@ -1,0 +1,151 @@
+.revierws{
+  @include padding-vertical-30();
+
+  .revierws-wrap{
+    @include container();
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .revierws-wrap-titles{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .main-title{
+    flex: 1 1 calc(50% - 1rem);
+  }
+  .mini-title{
+    flex: 1 1 calc(50% - 1rem);
+  }
+  .revierws-swiper-galery{
+    overflow: hidden;
+    padding-bottom: 100px;
+    position: relative;
+    .swiper-pagination-rew{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 150px;
+      height: 20px;
+      display: flex;
+      gap: 1rem;
+    }
+    .swiper-pagination-bullet {
+      width: 20px!important;
+      height: 6px!important;
+      background: $colororange-light-super; /* цвет неактивных точек */
+      //opacity: 0.8;
+      //transition: all 0.3s ease;
+      margin: 0 !important;
+    }
+
+
+    .swiper-pagination-bullet-active {
+      width: 60px!important;
+      height: 6px!important;
+      background: $colororange-light; /* цвет активной точки */
+    }
+  }
+  .swiper-slide{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 40px 20px 20px 20px;
+    border-radius: 20px;
+    border: 1px solid $colororange-light;
+    position: relative;
+    .icon{
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .revierws__btns{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    gap: 1rem;
+    .revierws-prev{
+      width: 50px;
+      height: 50px;
+      border: 1px solid $colororange-light;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .revierws-next{
+      width: 50px;
+      height: 50px;
+      border: 1px solid $colororange-light;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media #{$tablet-all-only} {
+    .revierws-swiper-galery{
+      overflow: hidden;
+      padding-bottom: 70px;
+    }
+    .revierws__btns{
+
+      .revierws-prev{
+        width: 40px;
+        height: 40px;
+      }
+      .revierws-next{
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  @media #{$mobile-only-two} {
+    .revierws-wrap{
+      gap: 1rem;
+    }
+    .revierws-wrap-titles{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .main-title{
+      flex: 1 1 100%;
+    }
+    .mini-title{
+      flex: 1 1 100%;
+    }
+    .swiper-slide{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 20px 20px 20px 20px;
+      border-radius: 20px;
+      border: 1px solid $colororange-light;
+      position: relative;
+      .icon{
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+    .revierws-swiper-galery{
+      overflow: hidden;
+      padding-bottom: 0;
+      .swiper-pagination-bullet{
+        display: none;
+      }
+    }
+    .revierws__btns{
+      display: none;
+    }
+  }
+}

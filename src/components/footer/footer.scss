@@ -1,0 +1,218 @@
+.footer {
+  background: url("../img/footerbg.png") no-repeat center / 100% 100%;
+  color: white;
+  padding: 150px 0  20px 0;
+  position: relative;
+  margin-top: -110px; /* Отрицательный margin тянет футер вверх */
+  z-index: 2;
+  ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    li {
+      text-decoration: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .footer-wrap {
+    @include container();
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .footer__elem {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 0;
+      border-bottom: 1px solid $colororange-light;
+    }
+    .footer__elem-top{
+      .menu-full{
+        ul{
+          display: flex;
+          gap: 4rem;
+        }
+
+      }
+    }
+    .footer__elem-social {
+      border-bottom: none;
+
+      span{
+        font-size: 12px;
+      }
+      .phone{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        svg{
+          fill: transparent;
+          stroke: $colororange-light;
+        }
+        div{
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+      .email{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        svg{
+          fill: transparent;
+          stroke: $colororange-light;
+        }
+        div{
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+      .adress{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        div{
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+    }
+
+    .footer__elem-sociality{
+      .social{
+        ul{
+          display: flex;
+          gap: 1rem;
+          svg{
+            fill: transparent;
+            stroke: white;
+          }
+        }
+
+      }
+      .footer__elem-btns{
+        display: flex;
+        gap: 2rem;
+        .house-crystal-btn{
+          border-color: white;
+        }
+      }
+    }
+     .footer__elem-bottom{
+      flex-wrap: wrap;
+       border-bottom: none;
+    }
+    .footer__elem-creater{
+     a{
+       color: $colororange-light;
+     }
+    }
+  }
+
+  @media #{$tablet-all-only} {
+    .footer-wrap{
+      gap: 0;
+      .footer__elem{
+      }
+      .footer__elem-top{
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 2rem;
+        .menu-full{
+          ul{
+            display: flex;
+            gap: 2rem;
+          }
+
+        }
+      }
+      .footer__elem-social{
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: flex-start;
+      }
+      .footer__elem-sociality{
+        .social{
+          ul{
+            display: flex;
+            gap: 1rem;
+            svg{
+            width: 40px;
+            height: 40px
+            }
+          }
+          }
+
+        }
+      .footer__elem-bottom{
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  }
+  @media #{$mobile-only-two} {
+    background: url("../img/footerbg.png") no-repeat center / cover;
+    padding: 70px 0  0px 0;
+    margin-top: -100px;
+    overflow: hidden;
+    .footer-wrap{
+      gap: 0;
+      .footer__elem{
+      }
+      .footer__elem-top{
+        flex-wrap: wrap;
+        gap: 2rem;
+        .menu-full{
+          ul{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+          }
+
+        }
+      }
+      .footer__elem-social{
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: flex-start;
+      }
+      .footer__elem-sociality{
+        flex-wrap: wrap;
+        gap: 1rem;
+        .social{
+          ul{
+            display: flex;
+            gap: 1rem;
+            svg{
+              width: 40px;
+              height: 40px
+            }
+          }
+        }
+        .footer__elem-btns{
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+          width: 100%;
+
+
+        }
+
+      }
+      .footer__elem-bottom{
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  }
+}
+

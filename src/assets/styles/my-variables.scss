@@ -1,0 +1,242 @@
+//.color-orange-tink{
+//  border: 1px solid #FFA943
+//}
+
+@mixin adaptive-font($minSize, $maxSize, $minWidth: 360, $maxWidth: 1440) {
+  $slope: ($maxSize - $minSize) / ($maxWidth - $minWidth);
+  $intersect: $minSize - $slope * $minWidth;
+  font-size: clamp(
+          #{$minSize}px,
+          calc(#{$slope * 100}vw + #{$intersect}px),
+          #{$maxSize}px
+  );
+}
+
+
+// Использование:
+//h1 { @include adaptive-font(27, 44); }
+//h2 { @include adaptive-font(20, 40); }
+//p  { @include adaptive-font(14, 16); }
+//box-shadow: 0px 5px 30px 0px #FFA94380;
+$colororange-light-super:#FFE9C7;
+$colororange-light:#FFA943;
+$colororange-light-mini:#FFB65E;
+$color-dark-light-mini:#242424;
+$color-dark-light:#1A1A1A;
+$color-pink-light:#FFF4E4;
+$color-dark-border-input:#6F6F6F;
+
+//background: #FFF4E4;
+
+
+
+
+.top-title{
+  color: $colororange-light;
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+.main-title{
+  font-family: Mak;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 60px;
+  @include adaptive-font(32,60, 200, 1920);
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mini-title{
+
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+
+}
+
+
+.text-start-titles{
+  text-align: start;
+}
+
+.house-crystal-btn{
+  border: 2px solid $color-dark-light;
+  border-radius: 50px;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    font-size: 15px;
+    color: $color-dark-light;
+    text-decoration: none;
+  }
+  &:hover{
+    border-color: $colororange-light;
+    cursor: pointer;
+    a{
+      color: $colororange-light;
+    }
+  }
+  @media (min-width: 100px) and (max-width: 767px) {
+      width: 100%;
+      padding: 15px 0;
+      border: 1.5px solid black;
+
+  }
+}
+
+.house-crystal-orange-btn{
+  background-color: $colororange-light;
+  border-radius: 50px;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  box-shadow: 0px 5px 30px 0px #F8DE8180;
+
+  a{
+    font-size: 15px;
+    color: $color-dark-light;
+    text-decoration: none;
+  }
+  &:hover{
+    background-color: $colororange-light-mini;
+    cursor: pointer;
+    a{
+      color: $color-dark-light-mini;
+    }
+  }
+  @media (min-width: 100px) and (max-width: 767px) {
+    width: 100%;
+    padding: 15px 0;
+    //border: 1.5px solid black;
+
+  }
+}
+
+
+
+
+.border-under-dis{
+  border-bottom: 1px solid #BDABDA;
+}
+.border-around{
+  padding: 20px 30px;
+  border: 1px solid #BDABDA;
+}
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:   10px 15px;
+  border:1px solid #A97BFF;
+  span{
+    font-size: 16px;
+  }
+
+}
+
+
+$color-red-btn:#ea285e;
+$color-green-act:#0f7c82;
+$color-pink-act:#ffebeb;
+
+
+
+$color-button-blue:#052996;
+$color-table-grey:#F5F5F5;
+$color-table-grey-2:#E4E4E4;
+
+
+$padding-blocks-between:120px 0 120px 0;
+
+
+$my-rhythm:  10px;
+
+
+@function myrhythm($size) {
+  @return $my-rhythm * $size;
+}
+
+
+.padding-vertical-120 {
+  padding-top: myrhythm(12);
+  padding-bottom: myrhythm(12);
+}
+@mixin padding-vertical-60(){
+  padding-top: myrhythm(6);
+  padding-bottom: myrhythm(6);
+  @media #{$desktop-only} {
+    padding-top: myrhythm(5);
+    padding-bottom: myrhythm(5);
+  }
+  @media #{$tablet-all-only} {
+    padding-top: myrhythm(4);
+    padding-bottom: myrhythm(4);
+  }
+  @media #{$mobile-only-two} {
+    padding-top: myrhythm(4);
+    padding-bottom: myrhythm(4);
+
+  }
+}
+@mixin padding-vertical-30(){
+  padding-top: myrhythm(3);
+  padding-bottom: myrhythm(3);
+  @media #{$desktop-only} {
+    padding-top: myrhythm(3);
+    padding-bottom: myrhythm(3);
+  }
+  @media #{$tablet-all-only} {
+    padding-top: myrhythm(3);
+    padding-bottom: myrhythm(3);
+  }
+  @media #{$mobile-only-two} {
+    padding-top: myrhythm(2);
+    padding-bottom: myrhythm(2);
+
+  }
+}
+@mixin margin-vertical-30(){
+  margin-top: myrhythm(6);
+  margin-bottom: myrhythm(6);
+  @media #{$desktop-only} {
+    margin-top: myrhythm(3);
+    margin-bottom: myrhythm(3);
+  }
+  @media #{$tablet-all-only} {
+    margin-top: myrhythm(3);
+    margin-bottom: myrhythm(3);
+  }
+  @media #{$mobile-only-two} {
+    margin-top: myrhythm(3);
+    margin-bottom: myrhythm(3);
+  }
+}
+
+
+
+@mixin PaddingBetween (){
+padding: $padding-blocks-between;
+}
+
+

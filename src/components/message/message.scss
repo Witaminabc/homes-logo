@@ -1,0 +1,116 @@
+.message{
+  background-color: $color-pink-act;
+  position: relative;
+  overflow: hidden;
+  .message-img{
+    position: absolute;
+
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    img{
+      height: 100%;
+      opacity: 0.3;
+    }
+  }
+  .message-wrap{
+    @include container();
+    padding: 50px 0;
+    display: flex;
+    .message__text{
+      padding-right: 10px;
+      width: 40%;
+    }
+    .message__form{
+      background-color: white;
+      z-index: 200;
+      form{
+        .item{
+          input{
+            padding: 12px 30px;
+            width: 100%;
+          }
+          input[type='submit'] {
+            width: auto;
+          }
+          }
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-direction: column;
+      }
+      .middle__button{
+
+      }
+    }
+  }
+  .message__blocks{
+    display: flex;
+    //height: 100%;
+    padding: 20px 0;
+    flex-direction: column;
+    //gap: 2rem;
+    justify-content: center;
+    //align-items: center;
+
+    z-index: 200;
+    .message__block{
+      background-color: white;
+      padding: 30px 0;
+      span{
+       color: $color-red-btn;
+      }
+      display: flex;
+      //gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+@media #{$tablet-all-only} {
+  .message{
+  .message-wrap {
+    flex-direction: column;
+
+    .message__text {
+      width: 100%;
+    }
+    .message__form {
+      width: 60%;
+      margin: 0 auto;
+    }
+    }
+    .message__blocks {
+      flex-direction: row;
+      .message__block{
+        padding: 30px;
+      }
+    }
+    }
+}
+@media #{$mobile-only-two} {
+  .message{
+    .message-wrap {
+      flex-direction: column;
+
+      .message__text {
+        width: 100%;
+      }
+      .message__form {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+    .message__blocks {
+      flex-direction: row;
+      .message__block{
+        padding: 15px;
+      }
+    }
+  }
+}

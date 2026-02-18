@@ -1,0 +1,108 @@
+{% set formOrder = {
+    header: "Форма оформления заказа — заголовок формы",
+    formGroups: [{
+        header: 'Личные данные — заголовок группы',
+        fields: [{
+            fieldComponent: 'text',
+            label: 'Имя',
+            fieldParam: {
+                required: true,
+                name: 'name',
+                placeholder: 'Введите имя',
+            }
+        },{
+            fieldComponent: 'text',
+            label: 'Фамилия',
+            fieldParam: {
+                required: true,
+                name: 'surname',
+                placeholder: 'Введите фамилию',
+            }
+        },{
+            fieldComponent: 'text',
+            label: 'Отчество',
+            fieldParam: {
+                required: true,
+                name: 'patronymic',
+                placeholder: 'Введите отчество',
+            }
+        }]
+    },{
+        header: 'Контактные данные',
+        fields: [{
+            fieldComponent: 'phone',
+            label: 'Телефон',
+            fieldParam: {
+                required: true,
+                name: 'phone',
+                placeholder: 'Введите номер телефона',
+            }
+        },{
+            fieldComponent: 'email',
+            label: 'E-mail',
+            fieldParam: {
+                required: true,
+                name: 'email',
+                placeholder: 'Введите e-mail',
+            }
+        }]
+    },{
+        header: 'Доставка',
+        fields: [{
+            fieldComponent: 'textarea',
+            label: 'Адрес доставки',
+            fieldParam: {
+                required: true,
+                name: 'address',
+                placeholder: 'Укажите адрес доставки',
+            }
+        }]
+    },{
+        fields: [{
+            fieldComponent: 'textarea',
+            label: 'Комментарии к заказу',
+            fieldParam: {
+                required: true,
+                type: 'text',
+                name: 'comments',
+                placeholder: '',
+            }
+        }]
+    },{
+        fields: [{
+            fieldComponent: 'checkbox',
+            modify: 'form-field_vertical',
+            label: 'Согласен с условиями предоставления персональных данных',
+            fieldParam: {
+                id: 'onlyCheckbox',
+                name: 'onlyCheckbox',
+                checked: true
+            }
+        }]
+    },{
+        fields: [{
+            fieldComponent: 'radiobtn',
+            modify: 'form-field_vertical',
+            label: 'Радио кнопка без текста',
+            fieldParam: {
+                id: 'onlyRadiobtn0',
+                name: 'onlyRadiobtn',
+                checked: true,
+                class: '',
+            }
+        }, {
+            fieldComponent: 'radiobtn',
+            modify: 'form-field_vertical',
+            label: 'Радио кнопка 2',
+            fieldParam: {
+                id: 'onlyRadiobtn1',
+                name: 'onlyRadiobtn',
+                checked: true,
+                text: "Радио кнопка c текстом",
+                class: '',
+            }
+        }]
+    }]
+} %}
+
+{% include './form.twig' with formOrder %}

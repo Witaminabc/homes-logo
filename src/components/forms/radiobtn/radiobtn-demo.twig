@@ -1,0 +1,74 @@
+<ul class="component-buttons__list">
+    <li>
+        {% include 'radiobtn.twig' with {
+            id: 'onlyradiobtn',
+            name: 'onlyradiobtn',
+            checked: true
+        }
+        %}
+    </li>
+    <li>
+        {% include 'radiobtn.twig' with {
+            id: 'onlyradiobtnUnchecked',
+            name: 'onlyradiobtnUnchecked',
+            text: 'unchecked',
+        }
+        %}
+    </li>
+    <li>
+        {% include 'radiobtn.twig' with {
+            id: 'radiobtndisabled',
+            name: 'radiobtndisabled',
+            text: 'disabled',
+            checked: true,
+            disabled: true
+        }
+        %}
+    </li>
+    <li>
+        {% include 'radiobtn.twig' with {
+            id: 'all',
+            name: 'user[all]',
+            text: 'Все пользователи',
+            checked: true,
+            modify: 'radiobtn_bold-label',
+            addCounter: 120
+        }
+        %}
+    </li>
+    <li>
+        {% include 'radiobtn.twig' with {
+                id: 'radiobtnWithBorder',
+                modify: 'user-type-filter__radiobtn_new',
+                name: 'user[user_id]',
+                text: 'Новые пользователи',
+                checked: true,
+                addCounter: '20'
+            }
+        %}
+    </li>
+    <li style="width:100px;">
+        {% include 'radiobtn.twig' with {
+                id: 'radiobtnTable',
+                modify: 'radiobtn_table',
+                name: 'user[user_id]',
+                text: 'только 20%&nbsp;НДС',
+                checked: true
+            }
+        %}
+    </li>
+</ul>
+<pre>
+    {% verbatim %}
+        {% include 'radiobtn.twig' with {
+                id: 'UNIQ_ID',
+                name: 'formName',
+                text: 'Label',
+                checked: true / false,
+                modify: 'radiobtn_bold-label / user-type-filter__radiobtn_new / ...',
+                addCounter: 120,
+                disabled: true / false
+            }
+        %}
+    {% endverbatim %}
+</pre>

@@ -1,0 +1,121 @@
+.faq-section{
+  @include padding-vertical-30();
+  position: relative;
+  .faq-section__left-img{
+    position: absolute;
+    left: 0;
+    top: -300px;
+
+  }
+  .faq-section-wrap{
+    @include container();
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    .faq-section__right-img{
+      position: absolute;
+      right: 0;
+      top: 20px;
+    }
+  }
+  .faq-list{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+  }
+  .faq-item{
+
+    flex: 1 1 calc(50% - 1rem);
+    padding: 20px;
+    background-color: $color-pink-light;
+    border-radius: 20px;
+    svg{
+      fill: transparent;
+      stroke: $colororange-light;
+    }
+    svg:nth-child(1){
+      display: block;
+    }
+    svg:nth-child(2){
+      display: none;
+    }
+
+  }
+  .faq-item.active{
+    svg:nth-child(2){
+      display: block;
+    }
+    svg:nth-child(1){
+      display: none;
+    }
+  }
+  .faq-question{
+
+
+    border: none;
+    width: 100%;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-pink-light;
+  }
+  .faq-question[aria-expanded="true"]{
+    border-radius: 20px 20px 0 0 ;
+    padding-bottom: 20px;
+  }
+  .faq-question-text{
+
+  }
+  .faq-answer{
+    padding-top:20px;
+    background-color: $color-pink-light;
+    border-top:1.5px solid $colororange-light;
+    border-radius: 0 0 20px 20px;
+
+  }
+
+  .faq-item{
+    .faq-answer  {
+      transition: all 3s ease-out;
+      visibility: hidden;
+    }
+  }
+  .faq-item.active{
+    .faq-answer  {
+      transition: all 3s ease-out;
+      visibility: visible;
+    }
+  }
+  .faq-section__btns{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  @media #{$mobile-only-two} {
+    .faq-list{
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .faq-section__left-img {
+      display: none;
+    }
+    .faq-section__right-img {
+      display: none;
+    }
+      .faq-item{
+      flex: 1 1 100%;
+    }
+    .faq-section__btns{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+}

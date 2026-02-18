@@ -1,0 +1,20 @@
+{% set class = class | default('form-input') %}
+{% if modify %}
+    {% set modify = ' '~modify %}
+{% endif %}
+
+{% if not name %}
+    <h2 class="development-warning">Укажите NAME для input</h2>
+{% endif %}
+
+{% set inputId = id | default(name) %}
+<input
+    id="{{ id }}"
+    class="{{ class }}{{ modify }}"
+    type="email"
+    name="{{ name | default('') }}"
+    {% if placeholder %} placeholder="{{ placeholder }}"{% endif %}
+    {% if required %} required{% endif %}
+    value="{{ value }}"
+    {{ dataAttr }}
+/>

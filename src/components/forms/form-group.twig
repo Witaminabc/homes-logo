@@ -1,0 +1,13 @@
+{% set classGroup = classGroup | default('form-group') %}
+{% if modify %}
+    {% set modify = ' '~modify %}
+{% endif %}
+
+<div class="{{ classGroup }}{{ modify }}">
+    {% if header %}
+        <div class="{{ classGroup }}__title">{{ header }}</div>
+    {% endif %}
+    {% for field in fields %}
+        {% include './form-field.twig' with field %}
+    {% endfor %}
+</div>

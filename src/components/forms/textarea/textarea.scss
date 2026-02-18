@@ -1,0 +1,25 @@
+$form-input-border-radius: 4px;
+
+.form-input {
+  width: 100%;
+  border-radius: $form-input-border-radius;
+  background: none;
+  border: 1px solid $color-gray;
+  font-size: 1.4rem;
+  padding: rhythm(1.5) rhythm(2);
+  text-align: left;
+  height: 36px;
+}
+
+.form-input_date {
+  width: 12ch;
+  text-align: center;
+}
+
+.form-input_date-start {
+  border-radius: $form-input-border-radius 0 0 $form-input-border-radius;
+}
+
+.form-input_date-end {
+  border-radius: 0 $form-input-border-radius $form-input-border-radius 0;
+}

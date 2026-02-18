@@ -1,0 +1,48 @@
+{#
+    {%  include 'radiobtn.twig' with {
+        id: 1,
+        modify: "",
+        modifyInput: "",
+        classField: "",
+        classInput: "",
+        classLabel: "",
+        value: "",
+        name: "",
+        error: "",
+        checked: true,
+        disabled: false,
+        required: true,
+        text: "",
+        title: "",
+        addCounter: ""
+    } %}
+#}
+
+{% if id %}
+    <div class="{{ class|default('radiobtn') }}{% if modify %} {{ modify }}{% endif %}">
+        <input
+            id="{{ id }}"
+            class="{{ classInput|default('radiobtn__input') }} {{ modifyInput|default('') }}"
+            type="radio"
+            value="{{ value|default(1) }}"
+            name="{{ name }}"
+            {% if error %} data-error="{{ error }}"{% endif %}
+            {% if checked %} checked {% endif %}
+            {% if disabled %} disabled {% endif %}
+            {% if required %} required {% endif %}
+        >
+        <label for="{{ id }}" class="{{ class|default('radiobtn') }}__label" title="{{ title }}">
+            <span class="{{ class|default('radiobtn') }}__area"></span>
+            {% if text %}
+                <span class="{{ class|default('radiobtn') }}__text">
+                    {{ text }}
+                    {% if addCounter %}
+                        <span class="{{ class|default('radiobtn') }}__text-counter">({{ addCounter }})</span>
+                    {% endif %}
+                </span>
+            {% endif %}
+        </label>
+    </div>
+{% else %}
+    <div class="development-error">Пожалуйста, укажи уникальный <b>id</b> для radiobtn button</div>
+{% endif %}

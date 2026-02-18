@@ -1,0 +1,215 @@
+.lock{
+  overflow: hidden;
+}
+
+@import './mobile-menu';
+.banner{
+  background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.2) 62.02%, rgba(35, 35, 35, 0.131641) 75.27%, rgba(72, 72, 72, 0.0579223) 87.1%, rgba(102, 102, 102, 0) 100%),
+          url("../img/bannerBG.png") no-repeat 100% 100% / cover;
+
+  //background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 62.02%, rgba(35, 35, 35, 0.131641) 75.27%, rgba(72, 72, 72, 0.0579223) 87.1%, rgba(102, 102, 102, 0) 100%);
+
+
+  padding-bottom: 100px;
+  .banner-wrap{
+    @include container();
+    position: relative;
+    @import './booking';
+  }
+  ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    li {
+      text-decoration: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .banner-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid white;
+    .mini-menu{
+      display: none;
+    }
+  }
+  .menu-full{
+    ul{
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .house-crystal-btn{
+    background-color: transparent;
+    border-color: white;
+  }
+  .banner-middle{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .banner-social-wrap{
+    display: flex;
+    gap: 2rem;
+
+    span{
+      color: white;
+      font-family: Noto Sans;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 12px;
+      leading-trim: NONE;
+      line-height: 100%;
+      letter-spacing: 0%;
+
+    }
+    .phone{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      svg{
+
+        fill: white;
+      }
+
+    }
+    .phone-wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .email{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      svg{
+
+      stroke: white;
+        fill: transparent;
+      }
+    }
+    .email-wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  .social{
+    ul{
+      display: flex;
+      gap: 1rem;
+      svg{
+        fill: transparent;
+        stroke: white;
+      }
+    }
+  }
+  .banner-titles{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 50px 0;
+    width: 50%;
+  }
+  .banner-title{
+    font-family: Mak;
+    font-weight: 700;
+    font-style: Bold;
+    @include adaptive-font(40,70, 200, 1920);
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: white;
+  }
+  .banner-subtitle{
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-style: Regular;
+    @include adaptive-font(14,18, 200, 1920);
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+  }
+  .banner-btns{
+    display: flex;
+    gap: 2rem;
+    padding-top: 30px;
+  }
+
+
+  @media #{$tablet-all-only} {
+    margin-bottom: 230px;
+    .banner-top{
+      .mini-menu{
+        display: block;
+        width: 44px;
+        height: 44px;
+        fill: white;
+        stroke: white;
+        cursor: pointer;
+      }
+      .banner-top-wrap{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+    }
+    .banner-titles{
+      gap: 1rem;
+      padding: 25px 0;
+    }
+    .banner-titles{
+      width: 70%;
+    }
+    .menu-full{
+      ul{
+        display: none;
+      }
+    }
+  }
+  @media #{$mobile-only-two} {
+    margin-bottom: 450px;
+    .banner-top{
+      .mini-menu{
+        display: block;
+        width: 44px;
+        height: 44px;
+        fill: white;
+        stroke: white;
+        cursor: pointer;
+
+      }
+      .house-crystal-btn{
+        display: none;
+      }
+    }
+    .banner-titles{
+      gap: 1rem;
+      padding: 25px 0;
+    }
+    .banner-middle{
+      display: none;
+    }
+    .banner-titles{
+      width: 100%;
+    }
+    .menu-full{
+      ul{
+        display: none;
+      }
+    }
+  }
+}

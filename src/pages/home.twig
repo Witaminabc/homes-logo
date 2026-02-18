@@ -1,0 +1,56 @@
+{% extends '../assets/layout/base.twig' %}
+
+{% block top %}
+
+{% endblock %}
+
+{% block body %}
+
+    {% set title = 'Главная - home' %}
+    {% set meta_d = 'Описание' %}
+    {% set theme_color = '#FFFFFF' %}
+    {% set body_class = 'page' %}
+
+{#    <main>#}
+{#        <h1 class="visually-hidden">Заголовок</h1>#}
+
+{#        {% include '../components/banners/promo.twig' %}#}
+{#    </main>#}
+{#    {% include '../components/header/header.twig' %}#}
+{#    {% include '../components/head/head.twig' %}#}
+
+
+{#    {% include '../components/slider/slider.twig' %}#}
+{#    {% include '../components/excellence/excellence.twig' %}#}
+
+
+        {% include '../components/banner/banner.twig' %}
+
+
+            {% include '../components/our-cotteges/our-cotteges.twig' %}
+    {% include '../components/about/about.twig' %}
+
+    {% include '../components/services/services.twig' %}
+    {% include '../components/offer/offer.twig' %}
+    {% include '../components/moments/moments.twig' %}
+    {% include '../components/questions/questions.twig' %}
+    {% include '../components/reviews/reviews.twig' %}
+    {% include '../components/contacts/contacts.twig' %}
+        {% include '../components/footer/footer.twig' %}
+
+
+{#            {% include '../components/modals/form-send.twig' %}#}
+{#    {% include '../components/modals/form-success.twig' %}#}
+
+
+
+
+    {#        {% include '../components/g-header/g-superheader.twig' %}#}
+
+
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

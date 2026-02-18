@@ -1,0 +1,126 @@
+.services {
+  @include container();
+  @include padding-vertical-60();
+
+  .services-wrap {
+
+  }
+
+  .services__blocks {
+    display: grid;
+
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    gap: 2rem;
+  }
+  .services__block{
+    background-color: $color-pink-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    .services__block-img{
+      img{
+        width: 80px;
+        height: 80px;
+      }
+
+    }
+    &:hover{
+      box-shadow: 0px 20px 30px 0px #FFA94366;
+      transform: translateY(-20px);
+    }
+    .services__block-open{
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+  }
+  .services__block-titles{
+    grid-row:1/2;
+    grid-column: 3/5;
+    background-color: transparent;
+    justify-content: flex-end;
+    padding: 10px 0;
+    &:hover{
+      box-shadow: 0px 0px 0px 0px #FFA94366;
+      transform: translateY(0);
+    }
+    .services-title{
+      position: absolute;
+      top: -70px;
+    }
+    .services-subtitle{
+      text-align: start;
+    }
+
+  }
+  @media #{$tablet-all-only} {
+    .services__blocks {
+      display: grid;
+
+
+      grid-template-columns: repeat(2 ,calc(50% - 0.5rem)) ;
+      grid-template-rows: repeat(4 ,1fr);
+      gap: 1rem;
+    }
+    .services__block{
+      padding: 20px;
+      .services__block-img{
+        img{
+          width: 70px;
+          height: 70px;
+        }
+
+      }
+    }
+    .services__block-titles {
+      grid-row: 1/3;
+      grid-column: 2/3;
+      justify-content: flex-start;
+      padding: 0 0;
+      .services-title{
+        position: static;
+        top: auto;
+      }
+    }
+  }
+  @media #{$mobile-only-two} {
+    @include padding-vertical-30();
+    .services__blocks {
+      display: grid;
+
+
+      grid-template-columns: repeat(2 ,calc(50% - 0.5rem)) ;
+      grid-template-rows: repeat(4 ,1fr);
+      gap: 1rem;
+    }
+    .services__block{
+      padding: 16px 10px;
+      .services__block-img{
+        img{
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+    .services__block-titles {
+      grid-row: 1/2;
+      grid-column: 1/3;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 0;
+      .services-title{
+        position: static;
+        top: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+.moments{
+  position: relative;
+  .moments-bright{
+    position: absolute;
+    right: 0;
+    top: -50px;
+  }
+  .moments-wrap{
+    @include container();
+    @include padding-vertical-30();
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .moments-swiper-galery{
+    overflow: hidden;
+   padding-bottom: 100px;
+    position: relative;
+    .swiper-slide {
+      transition: transform 0.3s ease;
+      transform: translateY(20%);
+
+      img{
+        width: 100%;
+        border-radius: 20px;
+      }
+    }
+
+    .swiper-slide-active {
+      transform: translateY(0);
+
+    }
+  }
+
+  .moments__btns{
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      .moments-next {
+
+        width: 60px;
+        height: 60px;
+        z-index: 1000;
+        background: transparent;
+        cursor: pointer;
+        color: white;
+        font-size: 28px;
+        border-radius: 30px;
+        border: 1px solid $colororange-light;
+        transition: background-color 0.3s ease;
+        &:hover{
+          background-color:$colororange-light ;
+        }
+      }
+
+      .moments-prev {
+
+        z-index: 1000;
+        width: 60px;
+        height: 60px;
+        background: transparent;
+        cursor: pointer;
+        color: white;
+        font-size: 28px;
+        border-radius: 30px;
+        border: 1px solid $colororange-light;
+        transition: background-color 0.3s ease;
+        &:hover{
+          background-color:$colororange-light ;
+        }
+      }
+    }
+  @media #{$desktop-only} {
+    .moments-swiper-galery{
+      overflow: hidden;
+      padding-bottom: 100px;
+    }
+    .moments__btns{
+      .moments-next {
+        width: 50px;
+        height: 50px;
+      }
+      .moments-prev {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  @media #{$tablet-all-only} {
+    .moments-swiper-galery{
+      overflow: hidden;
+      padding-bottom: 100px;
+    }
+    .moments__btns{
+
+      .moments-next {
+        width: 50px;
+        height: 50px;
+      }
+      .moments-prev {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  @media #{$mobile-only-two} {
+    .moments-bright{
+      display: none;
+    }
+    .moments-swiper-galery{
+      overflow: hidden;
+      padding-bottom: 50px;
+    }
+    .moments__btns{
+      bottom: 0;
+      .moments-next {
+        width: 40px;
+        height: 40px;
+      }
+      .moments-prev {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

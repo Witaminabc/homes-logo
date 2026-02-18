@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<div class="contacts">
+    <div class="contacts-wrap">
+        <div class="contacts-header">
+            <div class="booking-container-wrap">
+
+                <div class="contactimgst-wrap">
+                    <img class="contactimgst" src="../img/contactimgst.svg" alt="">
+                </div>
+                <div class="booking-container">
+
+
+                    <!-- Выпадающий список домов (из предыдущего макета) -->
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" id="houseDropdown">
+                            <span>ВЫБЕРИТЕ ЖЕЛАЕМЫЙ ДОМ</span>
+                            <svg class="dropdown-arrow" class="icon" width="24" height="24">
+                                <use href="../img/icons.svg#plusznak"></use>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu" id="houseMenu">
+                            <div class="dropdown-item selected" data-value="house1">Название дома, 4 местный</div>
+                            <div class="dropdown-item" data-value="house2">Название дома, 6 местный</div>
+                            <div class="dropdown-item" data-value="house3">Название дома, 2 местный</div>
+                            <div class="dropdown-item" data-value="house4">Название дома, 2 местный</div>
+                            <div class="dropdown-item" data-value="house5">Название дома, 1 местный</div>
+                            <div class="dropdown-item" data-value="house6">Название дома, 1 местный</div>
+                        </div>
+                    </div>
+
+                    <!-- Даты заезда/отъезда (из нового макета) -->
+                    <div class="dates-section">
+                        <div class="date-input-group">
+                            <label class="date-label">Заезд</label>
+                            <input type="text" class="date-input" id="checkin" placeholder="Когда" readonly>
+                        </div>
+                        <div class="date-input-group">
+                            <label class="date-label">Отьезд</label>
+                            <input type="text" class="date-input multiline-placeholder" id="checkout"
+                                   placeholder="Когда" readonly>
+                        </div>
+                    </div>
+
+                    <!-- Блок с гостями (интегрированный) -->
+                    <div class="guests-section">
+                        <!-- Гости (краткая сводка как в новом макете) -->
+                        <div class="guest-summary-block" id="guestSummaryToggle">
+                            <span class="guest-summary-label">Гости</span><br>
+                            <span class="guest-summary-value" id="guestSummary">1 взрослый, без детей</span>
+
+                            <svg class="dropdown-arrow" class="icon" width="24" height="24">
+                                <use href="../img/icons.svg#plusznak"></use>
+                            </svg>
+                        </div>
+
+                        <!-- Детальный блок выбора гостей (скрыт по умолчанию) -->
+                        <div class="guest-detail-panel" id="guestDetailPanel">
+                            <div class="guest-block">
+                                <div class="guest-category">
+                                    <div class="category-info">
+                                        <span class="category-title">Взрослые</span>
+                                        <span class="category-age">от 18 лет</span>
+                                    </div>
+                                    <div class="counter">
+                                        <button class="counter-btn minus" disabled>-</button>
+                                        <span class="counter-value" id="adultCount">1</span>
+                                        <button class="counter-btn plus">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="guest-category">
+                                    <div class="category-info">
+                                        <span class="category-title">Дети</span>
+                                        <span class="category-age">от 0 до 17 лет</span>
+                                    </div>
+                                    <div class="counter">
+                                        <button class="counter-btn minus" disabled>-</button>
+                                        <span class="counter-value" id="childrenCount">0</span>
+                                        <button class="counter-btn plus">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="pets-option">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox" id="petsCheckbox">
+                                        <span>С питомцами</span>
+                                    </label>
+                                </div>
+
+                                <button class="apply-guests-btn" id="applyGuests">Применить</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Согласие на обработку данных -->
+                    <div class="consent-section">
+                        <div class="consent-section__agree">
+                            <div>Заполняя форму вы даете согласие на <a href="">обработку персональных данных</a></div>
+                        </div>
+                        <button class="house-crystal-orange-btn" id="bookingSubmit">Забронировать</button>
+                    </div>
+
+                    <!-- Кнопка бронирования -->
+
+
+                    <!-- Уведомление об отправке -->
+                    <div class="notification" id="notification"></div>
+                </div>
+            </div>
+            <div class="contacts-header__title">
+
+                <div class="top-title text-start-titles">Контакты и бронь</div>
+                <div class="main-title text-start-titles">Наши контакты</div>
+                <div class="mini-title text-start-titles">Напишите нам или позвоните. Мы готовы помочь в организации
+                    вашего праздника!
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="contacts-map">
+        <img src="../img/mapcontact.png" alt="">
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+

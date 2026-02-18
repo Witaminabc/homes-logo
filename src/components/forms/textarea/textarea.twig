@@ -1,0 +1,20 @@
+{% set class = class | default('form-textarea') %}
+{% if modify %}
+    {% set modify = ' '~modify %}
+{% endif %}
+
+{% if not name %}
+    <h2 class="development-warning">Укажите NAME для textarea</h2>
+{% endif %}
+
+{% set inputId = id | default(name) %}
+<textarea
+    id="{{ id }}"
+    class="{{ class }}{{ modify }}"
+    name="{{ name | default('') }}"
+    {% if placeholder %} placeholder="{{ placeholder }}"{% endif %}
+    {% if required %} required{% endif %}
+    {{ dataAttr }}
+>
+    {{ value }}
+</textarea>
