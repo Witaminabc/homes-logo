@@ -1,6 +1,62 @@
-//.color-orange-tink{
-//  border: 1px solid #FFA943
-//}
+// GRID
+// Максимальная ширина контейнера
+// Рекомендуемые зачения и единицы: auto | px | % | vw
+// Если единицы не указаны будут px
+$grid-container: (
+        'mobile':               95%,
+        'mobile-landscape':     95%,
+        'tablet':               774px,
+        'tablet-landscape':     774px,
+        'desktop':              1280px,
+        'desktop-wide':         1280px,
+        'fullhd':               1280px,
+        'ultra':                1280px
+);
+
+// column amount
+$grid-columns:            36;
+
+// Отступы между колонками и внутри колонок
+// Отступы Будут пересчитаны в процены, а указанные значения будут минимальными
+// $mobile | $tablet | $tablet-landscape | $desktop | $desktop-wide | $fullhd | $ultra
+$grid-indents: (
+        'mobile':               0,
+        'mobile-landscape':     0,
+        'tablet':               0,
+        'tablet-landscape':     0,
+        'desktop':              0,
+        'desktop-wide':         0,
+        'fullhd':               0,
+        'ultra':                0
+);
+
+// vertical rhythm step
+$rhythm:                  4px;
+
+// breakpoints
+$breakpoints:  (
+        'mobile':               0,
+        'mobile-landscape':     650,
+        'tablet':               768,
+        'tablet-landscape':     991,
+        'desktop':              1200,
+        'desktop-wide':         1440,
+        'fullhd':               1920,
+        'ultra':                2560
+);
+
+// FONTS
+$font-primary-basic:                10px;
+$font-primary-size:									1rem;
+$font-primary-name:									'MAK';
+$font-primary-family:								'MAK', sans-serif;
+$font-primary-light:								300;
+$font-primary-regular:							400;
+$font-primary-samibold:							500;
+$font-primary-bold:									700;
+
+$font-secondary-name:									'NotoSans';
+$font-secondary-family:								'NotoSans', sans-serif;
 
 @mixin adaptive-font($minSize, $maxSize, $minWidth: 360, $maxWidth: 1440) {
   $slope: ($maxSize - $minSize) / ($maxWidth - $minWidth);

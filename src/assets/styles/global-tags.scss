@@ -1,4 +1,4 @@
-
+//уже отключены
 .middle__button{
   padding: 12px 30px;
   background-color: #ea285e;
@@ -252,40 +252,40 @@ h6 {
   }
 }
 
-//p {
-//  font-size: 1.2rem;
-//  line-height: 1.5em;
-//  color: $color-text-main;
-//  margin: 0 0 rhythm(4);
-//
-//  &:last-child {
-//    margin-bottom: 0;
-//  }
-//
-//  @media #{$tablet} {
-//    font-size: 1.4rem;
-//  }
-//
-//  @media #{$tablet-landscape} {
-//    font-size: 1.6rem;
-//  }
-//
-//  @media #{$desktop} {
-//    font-size: 1.6rem;
-//  }
-//
-//  @media #{$desktop-wide} {
-//
-//  }
-//
-//  @media #{$fullhd} {
-//
-//  }
-//
-//  @media #{$ultra} {
-//
-//  }
-//}
+p {
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  color: $color-text-main;
+  margin: 0 0 rhythm(4);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media #{$tablet} {
+    font-size: 1.4rem;
+  }
+
+  @media #{$tablet-landscape} {
+    font-size: 1.6rem;
+  }
+
+  @media #{$desktop} {
+    font-size: 1.6rem;
+  }
+
+  @media #{$desktop-wide} {
+
+  }
+
+  @media #{$fullhd} {
+
+  }
+
+  @media #{$ultra} {
+
+  }
+}
 
 .secondary-text {
   line-height: 1.5em;
@@ -389,58 +389,58 @@ textarea::-webkit-input-placeholder {
   color: $color-text-main;
 }
 
-// input::-internal-autofill-previewed,
-// input::-internal-autofill-selected,
-// textarea::-internal-autofill-previewed,
-// textarea::-internal-autofill-selected,
-// select::-internal-autofill-previewed,
-// select::-internal-autofill-selected,
-// input::-webkit-internal-autofill-selected,
-// input::-webkit-internal-autofill-selected:hover,
-// input::-webkit-internal-autofill-selected:focus,
-// input::-webkit-internal-autofill-selected:active {
-//   background-color: $trs !important;
-// }
+ input::-internal-autofill-previewed,
+ input::-internal-autofill-selected,
+ textarea::-internal-autofill-previewed,
+ textarea::-internal-autofill-selected,
+ select::-internal-autofill-previewed,
+ select::-internal-autofill-selected,
+ input::-webkit-internal-autofill-selected,
+ input::-webkit-internal-autofill-selected:hover,
+ input::-webkit-internal-autofill-selected:focus,
+ input::-webkit-internal-autofill-selected:active {
+   background-color: $trs !important;
+ }
 
-// @-webkit-keyframes autofill {
-//   to {
-//     color: $color-white;
-//     background: $trs;
-//   }
-// }
+ @-webkit-keyframes autofill {
+   to {
+     color: $color-white;
+     background: $trs;
+   }
+ }
 
-// .pointerEventsNone {
-//   pointer-events: none;
-// }
+ .pointerEventsNone {
+   pointer-events: none;
+ }
 
-// input:-webkit-autofill {
-//   -webkit-animation-name: autofill;
-//   -webkit-animation-fill-mode: both;
-// }
+ input:-webkit-autofill {
+   -webkit-animation-name: autofill;
+   -webkit-animation-fill-mode: both;
+ }
 
-// input:-webkit-autofill {
-//   box-shadow: inset 0 0 0 1000px $trs;
-// }
+ input:-webkit-autofill {
+   box-shadow: inset 0 0 0 1000px $trs;
+ }
 
-// input:-webkit-autofill,
-// input:-webkit-autofill:hover,
-// input:-webkit-autofill:focus,
-// input:-webkit-autofill:active {
-//   -webkit-box-shadow: 0 0 0 30px $trs inset !important;
-// }
+ input:-webkit-autofill,
+ input:-webkit-autofill:hover,
+ input:-webkit-autofill:focus,
+ input:-webkit-autofill:active {
+   -webkit-box-shadow: 0 0 0 30px $trs inset !important;
+ }
 
-// input::-webkit-autofill {
-//   -webkit-text-fill-color: $trs !important; /* цвет текста */
-//   color: $color-white !important; /* цвет текста */
-// }
+ input::-webkit-autofill {
+   -webkit-text-fill-color: $trs !important; /* цвет текста */
+   color: $color-white !important; /* цвет текста */
+ }
 
-// input::-webkit-contacts-auto-fill-button {
-//   visibility: hidden;
-//   display: none !important;
-//   pointer-events: none;
-//   position: absolute;
-//   right: 0;
-// }
+ input::-webkit-contacts-auto-fill-button {
+   visibility: hidden;
+   display: none !important;
+   pointer-events: none;
+   position: absolute;
+   right: 0;
+ }
 
 
 // ТАБЛИЦЫ

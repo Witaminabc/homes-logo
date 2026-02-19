@@ -1,0 +1,10 @@
+.page {
+  position: relative;
+  @include adaptive-font(14, 18);
+  font-family: "NotoSans" ;
+
+  line-height: 100%;
+
+
+
+}
