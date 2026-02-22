@@ -1,10 +1,9 @@
 
 .booking-container-wrap {
-  // Контейнер для формы бронирования
+  @include container();
+  margin: 0 auto;
   position: absolute;
-  bottom: -300px;
-  left: 0;
-  right: 0;
+  bottom: -90px;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -17,13 +16,17 @@
   .booking-title{
     font-family: "MAK";
     font-size: 32px;
+    @include adaptive-font(20,32, 360, 1450);
+
     text-align: start;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 100%;
+
   }
   .booking-container {
-    max-width: 100%;
-    width: 100%;
     background: $color-pink-light;
-
+    width: 100%;
 
     position: relative;
     z-index: 2;
@@ -33,525 +36,19 @@
     gap: 0.5rem;
 
     // Dropdown styles
-    .dropdown {
-      position: relative;
-      max-width: 310px;
-      width: 310px;
-      .dropdown-toggle {
-        width: 100%;
-        padding: 18px 25px;
-        background: white;
-        border: 2px solid #eaeef2;
-        border-radius: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        font-size: 16px;
-        color: #333;
-        transition: all 0.3s ease;
+    @import "./inputs/dropdown";
 
-        &:hover {
-          border-color: $colororange-light;
-        }
+    @import "./inputs/dates";
 
-        &.active {
-          border-color: $colororange-light;
-          box-shadow: 0 0 0 3px rgba($colororange-light, 0.1);
+    @import "./inputs/geust";
 
-          .dropdown-arrow {
-            transform: rotate(45deg);
-          }
-        }
+    @import "./inputs/consept-notition";
 
-        span {
-          font-weight: 500;
-          color: #333;
-          text-align: start;
-        }
-        .dropdown-toggle-wrap{
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-        .dropdown-toggle-name{
-          font-size: 14px;
-        }
-        span{
-          font-size: 18px;
-        }
 
-        .dropdown-arrow {
-          transition: transform 0.3s ease;
-          width: 24px;
-          height: 24px;
-
-          use {
-            stroke: $colororange-light;
-          }
-        }
-      }
-
-      .dropdown-menu {
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 0;
-        width: 100%;
-        background: white;
-        border: 2px solid #eaeef2;
-        border-radius: 20px;
-        overflow: hidden;
-        display: none;
-        z-index: 100;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-
-        &.show {
-          display: block;
-        }
-
-        .dropdown-item {
-          padding: 15px 25px;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          font-size: 15px;
-          color: #333;
-
-          &:hover {
-            background-color: #f8f9fa;
-          }
-
-          &.selected {
-            background-color: rgba($colororange-light, 0.1);
-            color: $colororange-light;
-            font-weight: 500;
-            position: relative;
-
-            &::before {
-              content: "✓";
-              position: absolute;
-              right: 25px;
-              color: $colororange-light;
-            }
-          }
-        }
-      }
-    }
-
-    // Dates section
-    // Dates section
-    .dates-section {
-      display: flex;
-      gap: 20px;
-
-      .date-input-group {
-        flex: 1;
-        max-width: 160px;
-
-        .date-input-wrapper {
-          position: relative;
-          width: 100%;
-
-          .date-label {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: white;
-            padding: 0 5px;
-            font-size: 12px;
-            font-weight: 500;
-            color: #666;
-            z-index: 3;
-            line-height: 1;
-            white-space: nowrap;
-
-            // Добавляем псевдоэлемент для лучшего перекрытия фона
-            &::before {
-              content: '';
-              position: absolute;
-              top: 50%;
-              left: 0;
-              right: 0;
-              height: 2px;
-              background: white;
-              z-index: -1;
-            }
-          }
-
-          .date-input {
-            width: 100%;
-            padding: 35px 25px 15px 25px; // Увеличиваем верхний padding для места под лейбл
-            border: 2px solid #eaeef2;
-            border-radius: 16px;
-            font-size: 20px;
-            color: #333;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
-
-            &:hover {
-              border-color: $colororange-light;
-            }
-
-            &:focus {
-              outline: none;
-              border-color: $colororange-light;
-              box-shadow: 0 0 0 3px rgba($colororange-light, 0.1);
-            }
-
-            &::placeholder {
-              color: black;
-              font-size: 20px;
-            }
-
-            // Скрываем placeholder когда есть значение
-            &:not(:placeholder-shown) {
-              &::placeholder {
-                opacity: 0;
-              }
-            }
-          }
-
-          // Анимация лейбла при фокусе
-          &:focus-within .date-label {
-            color: $colororange-light;
-            font-weight: 600;
-          }
-        }
-
-        // Альтернативный вариант с "плавающим" лейблом
-        .floating-label-wrapper {
-          position: relative;
-          margin-top: 10px;
-
-          .date-label-floating {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: white;
-            padding: 0 5px;
-            font-size: 16px;
-            color: #999;
-            transition: all 0.2s ease;
-            pointer-events: none;
-            z-index: 3;
-          }
-
-          .date-input {
-            width: 100%;
-            padding: 18px 15px;
-            border: 2px solid #eaeef2;
-            border-radius: 16px;
-            font-size: 16px;
-            color: #333;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-
-            &:hover {
-              border-color: $colororange-light;
-            }
-
-            &:focus {
-              outline: none;
-              border-color: $colororange-light;
-              box-shadow: 0 0 0 3px rgba($colororange-light, 0.1);
-
-              & + .date-label-floating {
-                top: 0;
-                transform: translateY(-50%);
-                font-size: 12px;
-                color: $colororange-light;
-              }
-            }
-
-            &:not(:placeholder-shown) + .date-label-floating {
-              top: 0;
-              transform: translateY(-50%);
-              font-size: 12px;
-              color: #666;
-            }
-          }
-
-          .placeholder-hidden {
-            &::placeholder {
-              color: transparent;
-            }
-          }
-        }
-      }
-    }
-
-    // Guests section
-    .guests-section {
-      position: relative;
-      max-width: 310px;
-      width: 310px;
-      .guest-summary-block {
-        width: 100%;
-        padding: 18px 25px;
-        background: white;
-        border: 2px solid #eaeef2;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &:hover {
-          border-color: $colororange-light;
-        }
-
-        &.active {
-          border-color: $colororange-light;
-          box-shadow: 0 0 0 3px rgba($colororange-light, 0.1);
-
-          .dropdown-arrow {
-            transform: rotate(45deg);
-          }
-        }
-
-        .guest-summary-label {
-          font-size: 14px;
-          color: #666;
-          margin-right: 10px;
-        }
-
-        .guest-summary-value {
-          font-size: 20px;
-          color: black;
-          font-weight: 500;
-          flex: 1;
-        }
-
-        .dropdown-arrow {
-          transition: transform 0.3s ease;
-          width: 24px;
-          height: 24px;
-
-          use {
-            stroke: $colororange-light;
-          }
-        }
-      }
-
-      .guest-detail-panel {
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 0;
-        width: 100%;
-        background: white;
-        border: 2px solid #eaeef2;
-        border-radius: 20px;
-        padding: 25px;
-        display: none;
-        z-index: 100;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-
-        &.show {
-          display: block;
-        }
-
-        .guest-block {
-          background: #f8f9fa;
-          border-radius: 16px;
-          padding: 20px;
-
-          .guest-category {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-
-            .category-info {
-              display: flex;
-              flex-direction: column;
-
-              .category-title {
-                font-size: 16px;
-                font-weight: 500;
-                color: #333;
-              }
-
-              .category-age {
-                font-size: 13px;
-                color: #888;
-                margin-top: 4px;
-              }
-            }
-
-            // Counter styles
-            .counter {
-              display: flex;
-              align-items: center;
-              gap: 15px;
-
-              .counter-btn {
-                width: 36px;
-                height: 36px;
-                border: 2px solid #e0e0e0;
-                background: white;
-                border-radius: 50%;
-                font-size: 18px;
-                font-weight: 600;
-                color: #333;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.2s ease;
-
-                &:not(:disabled):hover {
-                  background: $colororange-light;
-                  border-color: $colororange-light;
-                  color: white;
-                }
-
-                &:disabled {
-                  opacity: 0.3;
-                  cursor: not-allowed;
-                }
-              }
-
-              .counter-value {
-                font-size: 18px;
-                font-weight: 500;
-                color: #333;
-                min-width: 30px;
-                text-align: center;
-              }
-            }
-          }
-
-          .pets-option {
-            margin-bottom: 20px;
-
-            .checkbox-label {
-              display: flex;
-              align-items: center;
-              gap: 12px;
-              cursor: pointer;
-              font-size: 16px;
-              color: #333;
-
-              .checkbox {
-                width: 20px;
-                height: 20px;
-                border: 2px solid #ccc;
-                border-radius: 6px;
-                cursor: pointer;
-                accent-color: $colororange-light;
-              }
-            }
-          }
-
-          .apply-guests-btn {
-            width: 100%;
-            padding: 14px;
-            background: $colororange-light;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-
-            &:hover {
-              background: darken($colororange-light, 10%);
-            }
-          }
-        }
-      }
-    }
-
-    // Consent section
-    .consent-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 0;
-
-      .consent-section__agree {
-        flex: 1;
-
-        div {
-          font-size: 13px;
-          color: #666;
-          line-height: 1.4;
-
-          a {
-            color: $colororange-light;
-            text-decoration: underline;
-            transition: color 0.3s ease;
-
-            &:hover {
-              color: darken($colororange-light, 15%);
-            }
-          }
-        }
-      }
-
-      .house-crystal-orange-btn {
-        //padding: 15px 30px;
-        padding:  25px;
-
-        background: $colororange-light;
-        border: 2px solid $colororange-light;
-        border-radius: 15px;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        white-space: nowrap;
-
-        &:hover {
-          background: darken($colororange-light, 10%);
-          border-color: darken($colororange-light, 10%);
-          transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba($colororange-light, 0.3);
-        }
-
-        &:active {
-          transform: translateY(0);
-        }
-      }
-    }
-
-    // Notification
-    .notification {
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 12px;
-      display: none;
-      text-align: center;
-      font-size: 14px;
-      animation: slideIn 0.3s ease;
-
-      &.success {
-        display: block;
-        background: #d4edda;
-        color: #155724;
-        border: 1px solid #c3e6cb;
-      }
-
-      &.error {
-        display: block;
-        background: #f8d7da;
-        color: #721c24;
-        border: 1px solid #f5c6cb;
-      }
-    }
   }
 }
 
 .contacts-header__title {
-  max-width: 500px;
 
   .top-title {
     color: $colororange-light;
@@ -592,7 +89,6 @@
 }
 
 
-// Animation
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -604,12 +100,12 @@
   }
 }
 
-// Responsive
-@media (max-width: 1200px) {
 
+@media #{$tablet-all-only} {
         .booking-container-wrap {
           justify-content: center;
-          bottom: -350px;
+          bottom: -300px;
+
           .booking-container {
             margin-right: 0;
             display: flex;
@@ -645,16 +141,23 @@
       }
 
 
-@media (max-width: 768px) {
+@media #{$mobile-only-two}{
+        margin: 0;
 
         .booking-container-wrap {
-          bottom: -550px;
+          position: absolute;
+          max-width: 95%;
+          bottom: -450px;
+          padding: 15px;
           .booking-container {
             padding: 15px;
             flex-direction: column;
+            .dropdown{
+              width: 100%;
+            }
             .dates-section {
               flex-direction: column;
-              gap: 15px;
+              gap: 0.5rem;
               .date-input-group {
                 width: 100%;
                 max-width: 100%;

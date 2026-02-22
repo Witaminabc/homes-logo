@@ -1,0 +1,100 @@
+@media #{$tablet-all-only} {
+  margin-bottom: 300px;
+  .banner-top {
+    .mini-menu {
+      display: block;
+      width: 44px;
+      height: 44px;
+      fill: white;
+      stroke: white;
+      cursor: pointer;
+    }
+
+    .banner-top-wrap {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+  }
+  .banner-titles {
+    padding: 0;
+  }
+  .banner-middle {
+    padding: 10px 0;
+  }
+  .social {
+    ul {
+      display: flex;
+      gap: 1rem;
+
+      svg {
+        fill: transparent;
+        stroke: white;
+        width: 40px;
+      }
+    }
+  }
+  .banner-titles {
+    width: 70%;
+  }
+  .menu-full {
+    ul {
+      display: none;
+    }
+  }
+  .banner-btns {
+
+    gap: 1rem;
+    padding-top: 40px;
+  }
+}
+@media #{$mobile-only-two} {
+  height: 100vh;
+
+  .banner-wrap {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
+  margin-bottom: 450px;
+  .banner-top {
+    .mini-menu {
+      display: block;
+      width: 44px;
+      height: 44px;
+      fill: white;
+      stroke: white;
+      cursor: pointer;
+
+    }
+
+    .house-crystal-btn {
+      display: none;
+    }
+  }
+  .banner-titles {
+    gap: 1rem;
+    padding: 25px 0;
+
+  }
+  .banner-middle {
+    display: none;
+  }
+  .banner-titles {
+    width: 100%;
+  }
+  .menu-full {
+    ul {
+      display: none;
+    }
+  }
+  .banner-btns {
+    padding-top: 0;
+    padding-bottom: 30px;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

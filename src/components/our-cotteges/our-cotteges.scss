@@ -5,10 +5,10 @@
   background: #f8f9fa;
 
   position: relative;
-
+  @include container();
   .catalog-container {
     position: relative;
-    @include container();
+
   }
 
   .phone-img {
@@ -312,14 +312,14 @@
   }
 
   /* Responsive */
-  @media (max-width: 1280px) {
+  @media #{$tablet-all-only} {
 
-    padding: 60px 0 60px 0;
+    padding: 60px 30px 60px 30px;
     .phone-img {
       display: none;
     }
   }
-  @media (max-width: 768px) {
+  @media #{$mobile-only-two} {
     .catalog-nav .catalog-prev {
       display: none;
     }

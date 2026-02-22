@@ -1,7 +1,7 @@
 // import fortawesome from '@fortawesome/fontawesome-free';
-// import Swiper from 'swiper';
-import Swiper from 'swiper/bundle';
-
+import Swiper from 'swiper';
+// import Swiper from 'swiper/bundle';
+//
 import $ from 'jquery';
 import jQuery from 'jquery';
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spaceBetween: 20,
         centeredSlides: true,
         autoplay: {
-            delay: 6000,
+            delay: 600,
             disableOnInteraction: false,
         },
         navigation: {
@@ -129,12 +129,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Плавный скролл
-    document.querySelector('.cta-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('.catalog').scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+    // document.querySelector('.cta-btn').addEventListener('click', function(e) {
+    //     e.preventDefault();
+    //     document.querySelector('.catalog').scrollIntoView({
+    //         behavior: 'smooth'
+    //     });
+    // });
 });
 
 

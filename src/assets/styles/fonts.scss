@@ -3,8 +3,8 @@
 @include font-face('Gilroy', 'Gilroy-Regular', $font-primary-regular, normal, woff2);
 @include font-face('Gilroy', 'gilroy-bold', $font-primary-bold, bold, ttf);
 
-@include font-face('NotoSans', 'NotoSans-Regular', $font-primary-regular, regular, ttf);
-@include font-face('NotoSans', 'NotoSans-Bold', $font-primary-bold, bold, ttf);
+@include font-face('NotoSans', 'NotoSans-Regular', $font-primary-regular, regular, woff);
+@include font-face('NotoSans', 'NotoSans-Bold', $font-primary-bold, bold, woff);
 
 @include font-face('MAK', 'MAK', $font-primary-regular, regular, woff);
 @include font-face('MAK', 'MAK-bold', $font-primary-bold, bold, woff);

@@ -1,0 +1,142 @@
+.dates-section {
+  display: flex;
+  gap: 20px;
+  
+  .date-input-group {
+    flex: 1;
+
+    .date-input-wrapper {
+      position: relative;
+
+      .date-label {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: white;
+        padding: 0 5px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #666;
+        z-index: 3;
+        line-height: 1;
+        white-space: nowrap;
+
+        // Добавляем псевдоэлемент для лучшего перекрытия фона
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: white;
+          z-index: -1;
+        }
+      }
+
+      .date-input {
+        width: 100%;
+        padding: 35px 25px 15px 25px; // Увеличиваем верхний padding для места под лейбл
+        border: 2px solid #eaeef2;
+        border-radius: 16px;
+        font-size: 20px;
+        color: #333;
+        background: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+
+        &:hover {
+          border-color: $colororange-light;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $colororange-light;
+          box-shadow: 0 0 0 3px rgba($colororange-light, 0.1);
+        }
+
+        &::placeholder {
+          color: black;
+          font-size: 20px;
+        }
+
+        // Скрываем placeholder когда есть значение
+        &:not(:placeholder-shown) {
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+      }
+
+      // Анимация лейбла при фокусе
+      &:focus-within .date-label {
+        color: $colororange-light;
+        font-weight: 600;
+      }
+    }
+
+    // Альтернативный вариант с "плавающим" лейблом
+    .floating-label-wrapper {
+      position: relative;
+      margin-top: 10px;
+
+      .date-label-floating {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        padding: 0 5px;
+        font-size: 16px;
+        color: #999;
+        transition: all 0.2s ease;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      .date-input {
+        width: 100%;
+        padding: 18px 15px;
+        border: 2px solid #eaeef2;
+        border-radius: 16px;
+        font-size: 16px;
+        color: #333;
+        background: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: $colororange-light;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $colororange-light;
+          box-shadow: 0 0 0 3px rgba($colororange-light, 0.1);
+
+          & + .date-label-floating {
+            top: 0;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: $colororange-light;
+          }
+        }
+
+        &:not(:placeholder-shown) + .date-label-floating {
+          top: 0;
+          transform: translateY(-50%);
+          font-size: 12px;
+          color: #666;
+        }
+      }
+
+      .placeholder-hidden {
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+  }
+}

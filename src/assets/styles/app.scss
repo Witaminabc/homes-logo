@@ -47,7 +47,9 @@
 //@import './vendor-classes';
 
 // Libs
-@import './libs/swiper/swiper';
+//@import './libs/swiper/swiper';
+@import '../../../node_modules/swiper/swiper';
+//@import 'swiper';
 
 // Components
 @import '../../components/components';

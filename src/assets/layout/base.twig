@@ -25,9 +25,15 @@
     {% if not IS_DEVELOPMENT %}
         <link rel="stylesheet" href="css/style.css">
 {#        <link rel="stylesheet" href="css/Font-Awesome-Pro-6.2.1-main/css/all.min.css">#}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+{#        <link rel="stylesheet" href="https://libs/swiper.css">#}
 
     {% else %}
         <link rel="stylesheet" href="css/style.min.css?v={{ version() }}">
+        <link rel="stylesheet" href="https://libs/swiper.css?v={{ version() }}">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     {% endif %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,7 +43,7 @@
 <!--    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
     <![endif]-->
 
-    <link rel="prefetch" href="js/app.js">
+{#    <link rel="prefetch" href="js/app.js">#}
 </head>
 
 <body class="{{ body_class }}">
@@ -67,8 +73,24 @@
 
 {% block modal %}
 {% endblock %}
+{% if not IS_DEVELOPMENT %}
+    <script defer src="js/app.js"></script>
+{#    <script defer src="js/swiper.js"></script>#}
 
-<script defer src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+
+{% else %}
+    <script defer src="libs/jquery/jquery.js"></script>
+    <script defer src="libs/swiper/swiper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+    <script defer src="libs/js/main.js"></script>
+
+
+
+{% endif %}
+
 {% block script %}
 {% endblock %}
 </body>
